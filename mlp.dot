@@ -1,0 +1,99 @@
+digraph{
+  1 [shape=note,style=filled, fillcolor="#e0e0ff",label="loss []"]
+  2 [shape=record,style=filled, fillcolor="#f0f0f0",label="{ MseLossBackward }"]
+  3 [shape=record,style=filled, fillcolor="#f0f0f0",label="{ SigmoidBackward }"]
+  4 [shape=record,style=filled, fillcolor="#f0f0f0",label="{ ThAddmmBackward | { <output0> 0 | <output1> 1 | <output2> 2 }  }"]
+  5 [shape=record,style=filled, fillcolor="#f0f0f0",label="{ ExpandBackward }"]
+  6 [shape=record,style=filled, fillcolor="#f0f0f0",label="{ AccumulateGrad }"]
+  7 [shape=note,style=filled, fillcolor="#e0e0ff",label="Parameter [784]"]
+  8 [shape=record,style=filled, fillcolor="#f0f0f0",label="{ ThresholdBackward0 }"]
+  9 [shape=record,style=filled, fillcolor="#f0f0f0",label="{ ThAddmmBackward | { <output0> 0 | <output1> 1 | <output2> 2 }  }"]
+  10 [shape=record,style=filled, fillcolor="#f0f0f0",label="{ ExpandBackward }"]
+  11 [shape=record,style=filled, fillcolor="#f0f0f0",label="{ AccumulateGrad }"]
+  12 [shape=note,style=filled, fillcolor="#e0e0ff",label="Parameter [200]"]
+  13 [shape=record,style=filled, fillcolor="#f0f0f0",label="{ ThresholdBackward0 }"]
+  14 [shape=record,style=filled, fillcolor="#f0f0f0",label="{ ThAddmmBackward | { <output0> 0 | <output1> 1 | <output2> 2 }  }"]
+  15 [shape=record,style=filled, fillcolor="#f0f0f0",label="{ ExpandBackward }"]
+  16 [shape=record,style=filled, fillcolor="#f0f0f0",label="{ AccumulateGrad }"]
+  17 [shape=note,style=filled, fillcolor="#e0e0ff",label="Parameter [100]"]
+  18 [shape=record,style=filled, fillcolor="#f0f0f0",label="{ ThAddmmBackward | { <output0> 0 | <output1> 1 | <output2> 2 }  }"]
+  19 [shape=record,style=filled, fillcolor="#f0f0f0",label="{ ExpandBackward }"]
+  20 [shape=record,style=filled, fillcolor="#f0f0f0",label="{ AccumulateGrad }"]
+  21 [shape=note,style=filled, fillcolor="#e0e0ff",label="Parameter [50]"]
+  22 [shape=record,style=filled, fillcolor="#f0f0f0",label="{ ThresholdBackward0 }"]
+  23 [shape=record,style=filled, fillcolor="#f0f0f0",label="{ ThAddmmBackward | { <output0> 0 | <output1> 1 | <output2> 2 }  }"]
+  24 [shape=record,style=filled, fillcolor="#f0f0f0",label="{ ExpandBackward }"]
+  25 [shape=record,style=filled, fillcolor="#f0f0f0",label="{ AccumulateGrad }"]
+  26 [shape=note,style=filled, fillcolor="#e0e0ff",label="Parameter [100]"]
+  27 [shape=record,style=filled, fillcolor="#f0f0f0",label="{ ThresholdBackward0 }"]
+  28 [shape=record,style=filled, fillcolor="#f0f0f0",label="{ ThAddmmBackward | { <output0> 0 | <output1> 1 | <output2> 2 }  }"]
+  29 [shape=record,style=filled, fillcolor="#f0f0f0",label="{ ExpandBackward }"]
+  30 [shape=record,style=filled, fillcolor="#f0f0f0",label="{ AccumulateGrad }"]
+  31 [shape=note,style=filled, fillcolor="#e0e0ff",label="Parameter [200]"]
+  32 [shape=record,style=filled, fillcolor="#f0f0f0",label="{ TBackward }"]
+  33 [shape=record,style=filled, fillcolor="#f0f0f0",label="{ AccumulateGrad }"]
+  34 [shape=note,style=filled, fillcolor="#e0e0ff",label="Parameter [200, 784]"]
+  35 [shape=record,style=filled, fillcolor="#f0f0f0",label="{ TBackward }"]
+  36 [shape=record,style=filled, fillcolor="#f0f0f0",label="{ AccumulateGrad }"]
+  37 [shape=note,style=filled, fillcolor="#e0e0ff",label="Parameter [100, 200]"]
+  38 [shape=record,style=filled, fillcolor="#f0f0f0",label="{ TBackward }"]
+  39 [shape=record,style=filled, fillcolor="#f0f0f0",label="{ AccumulateGrad }"]
+  40 [shape=note,style=filled, fillcolor="#e0e0ff",label="Parameter [50, 100]"]
+  41 [shape=record,style=filled, fillcolor="#f0f0f0",label="{ TBackward }"]
+  42 [shape=record,style=filled, fillcolor="#f0f0f0",label="{ AccumulateGrad }"]
+  43 [shape=note,style=filled, fillcolor="#e0e0ff",label="Parameter [100, 50]"]
+  44 [shape=record,style=filled, fillcolor="#f0f0f0",label="{ TBackward }"]
+  45 [shape=record,style=filled, fillcolor="#f0f0f0",label="{ AccumulateGrad }"]
+  46 [shape=note,style=filled, fillcolor="#e0e0ff",label="Parameter [200, 100]"]
+  47 [shape=record,style=filled, fillcolor="#f0f0f0",label="{ TBackward }"]
+  48 [shape=record,style=filled, fillcolor="#f0f0f0",label="{ AccumulateGrad }"]
+  49 [shape=note,style=filled, fillcolor="#e0e0ff",label="Parameter [784, 200]"]
+  6 -> 7
+  5 -> 6
+  4:output0 -> 5
+  11 -> 12
+  10 -> 11
+  9:output0 -> 10
+  16 -> 17
+  15 -> 16
+  14:output0 -> 15
+  20 -> 21
+  19 -> 20
+  18:output0 -> 19
+  25 -> 26
+  24 -> 25
+  23:output0 -> 24
+  30 -> 31
+  29 -> 30
+  28:output0 -> 29
+  33 -> 34
+  32 -> 33
+  28:output2 -> 32
+  27 -> 28
+  23:output1 -> 27
+  36 -> 37
+  35 -> 36
+  23:output2 -> 35
+  22 -> 23
+  18:output1 -> 22
+  39 -> 40
+  38 -> 39
+  18:output2 -> 38
+  14:output1 -> 18
+  42 -> 43
+  41 -> 42
+  14:output2 -> 41
+  13 -> 14
+  9:output1 -> 13
+  45 -> 46
+  44 -> 45
+  9:output2 -> 44
+  8 -> 9
+  4:output1 -> 8
+  48 -> 49
+  47 -> 48
+  4:output2 -> 47
+  3 -> 4
+  2 -> 3
+  1 -> 2
+}

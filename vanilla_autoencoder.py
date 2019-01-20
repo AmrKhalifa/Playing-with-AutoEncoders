@@ -4,6 +4,8 @@ import torchvision
 import torchvision.transforms as transforms
 import matplotlib.pyplot as plt
 import torch.nn as nn
+import agtree2dot
+import subprocess
 
 # getting the data from torchvision FashionMNIST, the train_set are an iterable object.
 train_set = torchvision.datasets.FashionMNIST(
@@ -76,6 +78,11 @@ for epoch in range (no_of_epochs):
 
     print(f'epoch, {epoch}, loss = {loss.item()}')
 
+counter =0
+for i in range (600):
+    counter +=1
+print(counter)
+
 sample = next(iter(train_loader))
 sample_images ,_ = sample
 samples = sample_images[:8]
@@ -87,3 +94,21 @@ print(output.view(8,1,28,28).shape)
 
 show_batch(output.view(8,1,28,28))
 
+agtree2dot.save_dot(loss,
+                    {
+                        input: 'input',
+                        output: 'output',
+                        loss: 'loss',
+                    },
+                    open('./mlp.dot', 'w'))
+
+print('Generated mlp.dot')
+
+try:
+    subprocess.check_call(['dot', 'mlp.dot', '-Lg', '-T', 'pdf', '-o', 'mlp.pdf' ])
+
+except subprocess.CalledProcessError:
+    print('Calling the dot command failed. Is Graphviz installed?')
+    sys.exit(1)
+
+print('Generated mlp.pdf')
